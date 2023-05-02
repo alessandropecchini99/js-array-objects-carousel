@@ -33,12 +33,16 @@ const containerMiniature = document.querySelector(`.miniature`);
 
 // inserisco le img
 for (i = 0; i < arrImg.length; i++) {
-    containerPhoto.innerHTML += `<img src="${arrImg[i].image}" class="${i == 0 ? `active` : ``}">`
+    containerPhoto.innerHTML += `<img src="${arrImg[i].image}" class="${i == 0 ? `active` : ``}"> 
+    <h3  class="${i == 0 ? `active` : ``}">${arrImg[i].title}</h3>
+    <p class="${i == 0 ? `active` : ``}">${arrImg[i].text}</p>`
     containerMiniature.innerHTML += `<img src="${arrImg[i].image}" class="${i == 0 ? `active` : ``}">`
 }
 
 // seleziono le img in un array
 const img = document.querySelectorAll(`.photo img`);
+const h3Dom = document.querySelectorAll(`.photo h3`);
+const pDom = document.querySelectorAll(`.photo p`);
 console.log(img);
 
 // EVENTO PER I BUTTON
@@ -57,6 +61,8 @@ btnUp.addEventListener(`click`,
     function() {
         // rimuovo active dall'img corrente
         img[active].classList.remove(`active`);
+        h3Dom[active].classList.remove(`active`);
+        pDom[active].classList.remove(`active`);
         miniature[active].classList.remove(`active`);
         // setto nuovo valore di active
         active--;
@@ -65,6 +71,8 @@ btnUp.addEventListener(`click`,
         }
         // aggiungo active alla prossima img
         img[active].classList.add(`active`);
+        h3Dom[active].classList.add(`active`);
+        pDom[active].classList.add(`active`);
         miniature[active].classList.add(`active`);
         
         }
@@ -74,16 +82,20 @@ btnUp.addEventListener(`click`,
 btnDown.addEventListener(`click`, 
     function() {
     // rimuovo active dall'img corrente
-    img[active].classList.remove(`active`);
-    miniature[active].classList.remove(`active`);
+        img[active].classList.remove(`active`);
+        h3Dom[active].classList.remove(`active`);
+        pDom[active].classList.remove(`active`);
+        miniature[active].classList.remove(`active`);
     // setto nuovo valore di active
     active++;
     if (active >= img.length) {
         active = 0;
     }
     // aggiungo active alla prossima img
-    img[active].classList.add(`active`);
-    miniature[active].classList.add(`active`);
+        img[active].classList.add(`active`);
+        h3Dom[active].classList.add(`active`);
+        pDom[active].classList.add(`active`);
+        miniature[active].classList.add(`active`);
     
     }
 )
@@ -94,9 +106,13 @@ for (let i = 0; i < miniature.length; i++) {
         function() {
             console.log(`click` + i)
             img[active].classList.remove(`active`);
+            h3Dom[active].classList.remove(`active`);
+            pDom[active].classList.remove(`active`);
             miniature[active].classList.remove(`active`);
             active = i;
             img[active].classList.add(`active`);
+            h3Dom[active].classList.add(`active`);
+            pDom[active].classList.add(`active`);
             miniature[active].classList.add(`active`);
         }
     )
