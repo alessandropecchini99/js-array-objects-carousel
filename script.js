@@ -2,7 +2,6 @@
 // INIZIO CODICE
 
 // creo array con le img
-
 const arrImg = [
     {
         image: 'img/01.webp',
