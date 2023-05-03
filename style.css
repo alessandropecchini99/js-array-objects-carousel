@@ -97,3 +97,22 @@ body {
     padding: 0;
     border: 0px;
 }
+
+/* button cambio immagine ogni secondo */
+.change_avanti, .change_reverse, .change_fermo {
+    background-color: black;
+    margin-top: 0.3em;
+    padding: 0px 8px;
+    font-size: 2em;
+    color: grey;
+    border: 2px solid black;
+    border-radius: 100px;
+}
+
+.change_avanti:hover, .change_fermo :hover, .change_reverse:hover {
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
